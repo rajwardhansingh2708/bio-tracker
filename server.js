@@ -18,6 +18,11 @@ const Visit = mongoose.model("Visit", {
   time: Date
 });
 
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
+
+
 app.get("/", async (req, res) => {
 
   const parser = new UAParser(req.headers["user-agent"]);
