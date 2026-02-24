@@ -7,7 +7,7 @@ const axios = require("axios");
 const app = express();
 
 // 🔴 We will paste MongoDB link here later
-mongoose.connect("mongodb+srv://rajws:avenger5@cluster0.m6dl51y.mongodb.net/?appName=Cluster0");
+mongoose.connect(process.env.MONGO_URI);
 
 const Visit = mongoose.model("Visit", {
   ip: String,
