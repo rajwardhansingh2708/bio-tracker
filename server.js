@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config(); 
 const mongoose = require("mongoose");
 const UAParser = require("ua-parser-js");
 const requestIp = require("request-ip");
@@ -7,8 +8,8 @@ const axios = require("axios");
 const app = express();
 
 // 🔴 We will paste MongoDB link here later
-mongoose.connect(process.env.MONGO_URI);
 
+mongoose.connect(process.env.MONGO_URI);
 const Visit = mongoose.model("Visit", {
   ip: String,
   device: String,
@@ -44,7 +45,6 @@ app.get("/", async (req, res) => {
     location,
     time: new Date()
   });
-
   res.send(`
     <html>
       <body style="text-align:center;margin-top:200px;font-family:Arial;">
