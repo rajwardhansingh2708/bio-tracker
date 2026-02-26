@@ -84,3 +84,23 @@ Render (Backend Hosting)
 
 Vercel (Frontend Hosting)
 
+Deployment
+
+
+
+The backend is deployed on Render with environment-based configuration. Cold-start latency is mitigated using a dedicated health monitoring route.
+
+
+
+Architecture
+
+
+
+Frontend (Vercel)
+
+→ Backend (Render)
+
+→ MongoDB Atlas
+
+→ External Geo-IP API
+
